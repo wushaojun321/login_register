@@ -1,0 +1,27 @@
+{% extends 'base.html '%}
+{% block content %}
+<div id="page-wrapper">
+	<form role='from' method='POST'>
+		<div class="form-group">
+			<label>请输入您要发送的邮箱：</label>
+				<input name='to_mailaddr' class="form-control">
+		</div>
+		<div class="form-group">
+			<label>邮件标题：</label>
+				<input name='mail_title' class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label>请输入发送的内容</label>
+				<input name='mail_content' class="form-control" placeholder="Enter text">
+		</div>
+		<p>
+			<button type='submit' class='btn btn-primary btn-lg'>发送
+			</button>
+		</p>
+	</form>
+	{% if result != {} %}
+		<h2>{{ result }}</h2>
+	{% endif %}
+</div>
+{% endblock %}

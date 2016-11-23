@@ -1,0 +1,37 @@
+{% extends 'login.html' %}
+{% block title %}
+<title>注册</title>
+{% endblock %}
+{% block script %}
+
+{% endblock script %}
+
+{% block content %}
+	<div class="login-top">
+		<h1>注册</h1>
+		<form method = 'POST' action='/reg'>
+			<input type="text" value="请输入手机号" name = 'phone' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入手机号';}">
+			<input type="text" name = 'passwd' value="请输入密码" id='regpwd' onfocus="this.value='';this.type='password'"/>	
+			<input type="text" name = 'confirm_passwd' value="请再次输入密码" id="regconfirmpwd" onfocus="this.value='';this.type='password'"/>	
+			<input type="text" value="请输入班级类型python/linux" name = 'class_type' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入班级类型python/linux';}">
+			<input type="text" value="请输入班级" name = 'class_num' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入班级';}">
+			<input type="text" value="请输入性别" name = 'sex' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入性别';}">
+			<input type="text" name = 'verification' value="请输入验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入验证码';}">
+		    <div class="forgot">
+		    	<input type="submit" name='reg' value="注册" >
+		    	<input type="submit" name='reg' value="发送验证码" >
+		    </div>
+	    </form>
+	    <div class="forgot">
+			
+	    </div>
+	</div>
+	<div class="login-bottom">
+
+		<h3><a href="/login">返回登录界面</a></h3>
+	</div>
+	{% if result != {} %}
+		<h1>{{ result['message'] }}</h1>
+		<h1>{{ verification }}</h1>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+{% block title %}
+<title>登录</title>
+{% endblock %}
+<!-- Custom Theme files -->
+<link href="../static/CSS/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<!--Google Fonts-->
+{% block script %}
+<script>
+window.onload = function(){
+var pwd = document.getElementById("pwd");
+pwd.onfocus= function(){
+if(this.value == "请输入密码"){
+pwd.setAttribute('type','password');
+this.value = "";
+}
+ 
+}
+}
+</script>
+{% endblock script %}
+</head>
+<body>
+<div class="login">
+	<h2>欢迎来到WSJ的网站</h2>
+	{% block content %}
+	<div class="login-top">	
+		<h1>登录</h1>
+		<form method = 'POST'>
+			<input type="text" value="请输入手机号" name = 'phone' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入手机号';}">
+			<input type="text" name = 'passwd' value="请输入密码" id = 'pwd'>
+<!-- 			<input type="submit" value="登录" > -->
+	    
+		    <div class="forgot">
+		    	<a href="/findpsw">忘记密码</a>
+		    	<input type="submit" value="登录" >
+		    </div>
+	    </form>
+	</div>
+	<div class="login-bottom">
+
+		<h3><a href="/reg">注册点这里-_-</a></h3>
+	</div>
+	{% if result != {} %}
+		<h1>{{ result }}</h1>
+	{% endif %}
+	{% endblock content %}
+</div>	
+<div class="copyright">
+	<p>本网页解释权归@武少军所有</p>
+</div>
+
+
+</body>
+</html>

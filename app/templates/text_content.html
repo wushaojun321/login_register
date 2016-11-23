@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block content %}
+	{% if text %}
+		<h1>{{ text[1] }}</h1>
+		<h4>{{ text[2] }}</h4>
+		<h1>{{ text[3] }}</h1>
+	{% else %}
+		<h1>对不起，您访问的文章没有了！</h1>
+	{% endif %}
+{% endblock %}

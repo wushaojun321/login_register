@@ -1,0 +1,23 @@
+{% extends 'base.html '%}
+{% block content %}
+<div id="page-wrapper">
+	<form role='from' method='POST'>
+		<div class="form-group">
+			<label>请输入您要发送的手机号：</label>
+				<input name='to_phonenumber' class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label>请输入发送的内容</label>
+				<input name='message_content' class="form-control" placeholder="Enter text">
+		</div style="margin:0 auto;width:200px;">
+		<p>
+			<button type='submit' class='btn btn-primary btn-lg'>发送
+			</button>
+		</p>
+	</form>
+	{% if result != {} %}
+		<h2>{{ result }}</h2>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends 'base.html'%}
+{% block content %}
+{% for i in L%}
+	<li><a href='/text/{{i[0]}}'>{{ i[1] }}</a></li>
+{% endfor %}
+{% endblock %}
